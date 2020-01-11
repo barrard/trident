@@ -1,109 +1,43 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-
-
-  <title>getUserMedia</title>
-
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <title>TriDent</title>
 </head>
-
 <body>
+  <div>
+    <video autoplay></video>
+    <canvas class="d-none"></canvas>
+</div>
+Video
+<div class="video-options">
+  <select name="" id="" class="custom-select">
+      <option value="">Select camera</option>
+  </select>
+</div>
+audio
+<div class="audio-options">
+  <select name="" id="" class="custom-select">
+      <option value="">Select Audio</option>
+  </select>
+</div>
 
-  <div id="container">
+<img class="screenshot-image" alt="">
 
-    <div class="select">
-      <label for="videoSource">Video source: </label><select id="videoSource"></select>
-    </div>
-    <div id="calibrate_setup_section">
-      <button id='calibrate_edit_btn'>Edit</button>
-      <p>Test List</p>
-      <h5 id="current_test_name"></h5>
-      <select id="test_list" placeholder="select">
-        <option value="start">Select Test</option>
-      </select>
+<div class="controls">
+    <button class="btn btn-danger play" title="Play"><i data-feather="play-circle"></i></button>
+    <button class="btn btn-info pause d-none" title="Pause"><i data-feather="pause"></i></button>
+    <button class="btn btn-outline-success screenshot d-none" title="ScreenShot"><i data-feather="image"></i></button>
+</div>
 
-      <button id="add_new_test_btn">Add New Test</button>
-      <input id="new_test_name" type="text" name="new_test"/>
-      <div id="cal_curve_section">
-        <span id="std_deviation_canvas_span"><canvas id='std_deviation_canvas'></canvas></span>
+  <script src="https://unpkg.com/feather-icons"></script>
 
-      </div>
-      <table id='cal_table'>
-        <tr>
-            <th id="vertical_line">Value</th>
-            <th>reading</th>
-        </tr>
-
-      </table>
-      <button id="add_calibration_point_btn">Add Calibration Point</button>
-    </div>
-
-    <div class="read_out">
-
-      <button id="stop_btn" onclick="stop_reader()">Pause Reader</button>
-      <button id="start_btn" onclick="start_reader()">Resume Reader</button>
-      <div class="all_results">
-        <div id="red_result"></div>
-        <div id="green_result"></div>
-        <div id="blue_result"></div>
-        <div id="alpha_result"></div>
-      </div>
-      <div id="combined_color"></div>
-      <span id="label_interval"><input
-            type="text" name="reader_interval" id='reader_interval' value='500'
-          /></span>
-          <ul id="box_dimentions_list">
-            <h4>Reader Box settings</h4>
-            <li>Top<input oninput="setup_reader_target()"
-              type="number"
-              name="box_top"
-              value="30"
-            />%</li>
-            <li>Left<input oninput="setup_reader_target()"
-              type="number"
-              name="box_left"
-              value="30"
-            />%</li>
-            <li>Height<input oninput="setup_reader_target()"
-              type="number"
-              name="box_height"
-              value="10"
-            />%</li>
-            <li>Width<input oninput="setup_reader_target()"
-              type="number"
-              name="box_width"
-              value="10"
-            />%</li>
-          </ul>
-    </div>
-
-    <input type="file" accept="video/*" capture>
-    <canvas id='canvas_reader'></canvas>
-    <div id="video_container">
-      <video autoplay playsinline></video>
-      <div id="reader_target"></div>
-
-    </div>
-<!--     <button onclick="stop_draw()">Stop Video</button>
-    <button onclick="restart_draw()">Restart Video</button> -->
-
-
-
-
-
-    <div id="errorMsg"></div>
-
-
-  </div>
   <script src="js.js"></script>
-  <script src="calibrating.js"></script>
-  <script src="global.js"></script>
-  <script src="node_modules/toastada/index.js"></script>
-
 </body>
+
 </html>

@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/barrard/videoapp2#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "ngrok": "^3.2.7",
     "toastada": "^1.0.0"
   }
 }
